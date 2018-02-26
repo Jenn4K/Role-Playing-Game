@@ -1,0 +1,6 @@
+Flame_Tornado   700     4   850     300     400
+Breath_of_Fire  350     1   450     100     150
+Heat_Wave       450     2   600     150     250
+Lava_Commet     800     7   1000    550     500
+Breath_of_Fire  350     1   450     100     150
+Heat_Wave       450     2   600     150     250

@@ -1,0 +1,10 @@
+Andrealphus     2       600       500     40      65
+Aim-Haborym     1       450       350     35      50
+Andromalius     3       550       450     25      50
+Chiang-shih     4       700       600     40      70
+FallenAngel     5       800       700     50      60
+Ereshkigall     6       950       450     35      10
+Melchiresas     7       350       150     75      30
+Jormunngand     8       600       900     20      30
+Rakkshasass     9       550       600     35      90
+Taltecuhtli     10      300       200     50      80

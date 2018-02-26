@@ -1,0 +1,4 @@
+Garl_Glittergold        700     550     600   500     2500    7
+Rillifane_Rallathil     1300    750     450   500     2500    9
+Segojan_Earthcaller     900     800     500   650     2500    5
+Skoraeus_Stonebones     800     850     600   450     2500    6

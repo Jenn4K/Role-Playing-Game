@@ -1,0 +1,6 @@
+Snow_Canon      500     2   650     250     300
+Ice_Blade       250     1   450     100     200
+Frost_Blizzard  750     5   850     350     400
+Frost_Blizzard  750     5   850     350     400
+Arctic_storm    700     6   800     300     450
+Ice_Blade       250     1   450     100     200

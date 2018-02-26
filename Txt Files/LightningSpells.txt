@@ -1,0 +1,6 @@
+LightningDagger       400        1       500     150     200
+Thunder_Blast         750        4       950     400     500
+Electric_Arrows       550        5       650     200     300
+Spark_Needles         500        2       600     200     250
+Spark_Needles         500        2       600     200     250
+LightningDagger       400        1       500     150     200
