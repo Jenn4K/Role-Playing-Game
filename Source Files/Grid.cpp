@@ -126,8 +126,11 @@ void Grid::move(){
                 cout << "Are you sure you wanna quit the game?  ";
                 string s;
                 cin >> s;
-                if((s == "NO") || (s == "no"))
+                if((s == "NO") || (s == "no")){
                     this->play = 0;
+                    break;
+                }
+                else if ((s == "YES") || (s == "yes"))  break;
                 else if((s != "YES") && (s != "yes"))
                     cout << "Not a valid answer!Try again." << endl;
             }
@@ -196,8 +199,11 @@ void Grid::replay_move(){
                 cout << "Are you sure you wanna quit the game?  ";
                 string s;
                 cin >> s;
-                if((s == "NO") || (s == "no"))
+                if((s == "NO") || (s == "no")){
                     this->play = 0;
+                    break;
+                }
+                else if ((s == "YES") || (s == "yes"))  break;
                 else if((s != "YES") && (s != "yes"))
                     cout << "Not a valid answer!Try again." << endl;
             }
@@ -497,14 +503,46 @@ void Grid::Fight(){
         }
     } while((HeroSum!=0) && (MonsterSum!=0));
 
+    // Some prints for effects again //
+    //_________________________________________________________________________________________________________________________________________________________________//
     if(HeroSum == 0){
-        this->print_effects(0);
-        this->get_standarBonus("loss");
+        cout << endl ;
+        cout << "\t\t\t\t\t\t" << KRED << "  .-***-." << "\t\t\t" << KRED << "  .-***-." << endl;
+        cout << "\t\t\t\t\t\t" << KRED << " /" << KWHT << "* * * *" << KRED << "9" << "\t\t\t" << KRED << " /" << KWHT << "* * * *" << KRED << "9" << endl;
+        cout << "\t\t\t\t\t\t" << KRED << ":_.-:`:-._;" << KWHT << "\t\t\t" << KRED << ":_.-:`:-._;" << KWHT << endl;
+        cout << "\t\t\t\t\t\t" << "    (_)" << "\t\t\t\t" << "    (_)" << endl;
+        cout << "\t\t\t\t\t\t" << KGRN << " !|/" << KWHT << "(_)" << KGRN << "!|/" << " !|/ !|/ !|/ !|/ !|/ !|" << KGRN << "!|/" << KWHT << "(_)" << KGRN << "!|/" ;
+        cout << endl << endl << KMAG << "\t\t\t\t\t\t\t ------------------";
+        cout << endl << "\t\t\t\t\t\t\t | D e f e a t :( |" << endl;
+        cout << "\t\t\t\t\t\t\t ------------------" << KWHT << endl << endl;
+        get_standarBonus("loss");
     }
     else if(MonsterSum == 0){
-        this->print_effects(1);
-        this->get_standarBonus("win");
+        cout << endl;
+        cout << "\t\t\t" << KCYN << "*" << KRED << "                             |>>>" << KCYN << "                    +" << endl;
+        cout << "\t\t\t" << KCYN << "+          *" << KYEL << "                      |" << KCYN << "                   *       +" << endl;
+        cout << "\t\t\t" << KRED << "                    |>>>" << KYEL << "      _  _|_  _ " << KCYN << "  *" << KRED << "     |>>>" << endl;
+        cout << "\t\t\t" << KCYN << "           *" << KYEL << "        |        |;| |;| |;|        |                 " << KCYN << "*" << endl;
+        cout << "\t\t\t" << KCYN << "     + " << KYEL << "         _  _|_  _    77.    .  /    _  _|_  _       " << KCYN << "+" << endl;
+        cout << "\t\t\t" << KCYN << " *" << KYEL << "             |;|_|;|_|;|    77: +   /    |;|_|;|_|;|" << endl;
+        cout << "\t\t\t" << KYEL << "               77..      /    ||:+++. |    77.    .  /           " << KCYN << "*" << endl;
+        cout << "\t\t\t" << KCYN << "      +" << KYEL << "         \\.  ,  /     ||:+++  |     77:  .  /" << endl;
+        cout << "\t\t\t" << "                 ||:+  |_   _ ||_ . _ | _   _||:+  |       " << KCYN << "*" << endl;
+        cout << "\t\t\t" << "          *" << KYEL << "      ||+++.|||_|;|_|;|_|;|_|;|_|;||+++ |          " << KCYN << "+" << endl;
+        cout << "\t\t\t" << KYEL << "                 ||+++ ||.    .     .      . ||+++.|   " << KCYN << "*" << endl;
+        cout << "\t\t\t" << "+   *" << KYEL << "            ||: . ||:.     . .   .  ,   ||:   |               " << KCYN << "*" << endl;
+        cout << "\t\t\t" << "         *" << KYEL << "       ||:   ||:  ,     +       .  ||: , |" << KCYN << "      +" << endl;
+        cout << "\t\t\t" << "  *" << KYEL << "              ||:   ||:.     +++++      . ||:   |" << KCYN << "          *" << endl;
+        cout << "\t\t\t" << "     +           " << KYEL << "||:   ||.     +++++++  .    ||: . |" << KCYN << "    +" << endl;
+        cout << "\t\t\t" << KCYN << "           +" << KYEL << "     ||: . ||: ,   +++++++ .  .  ||:   |             " << KCYN << "+" << endl;
+        cout << "\t\t\t" << KYEL << "                 ||: . ||: ,   +++++++ .  .  ||:   |        " << KCYN << "*" << endl;
+        cout << "\t\t\t" << KYEL <<  "                 ||: . ||: ,   +++++++ .  .  ||:   |" << endl;
+        cout << endl << endl << KCYN << "\t\t\t\t\t\t -----------------";
+        cout << endl << "\t\t\t\t\t\t | V I C T O R Y |" << endl;
+        cout << "\t\t\t\t\t\t -----------------" << KWHT << endl << endl;
+        get_standarBonus("win");
     }
+    //_________________________________________________________________________________________________________________________________________________________________//
 
     //Deleting all Monsters to insert new ones at next Battle
     for(ti = myMonsters.begin(); ti != myMonsters.end(); ++ti)
@@ -818,45 +856,3 @@ Grid::~Grid(){
         delete[] Map[i];
     delete[] Map;
 }
-
-// Some prints for effects again //
-//_________________________________________________________________________________________________________________________________________________________________//
-void Grid::print_effects(int flag){
-
-    if(flag == 0){
-        cout << endl ;
-        cout << "\t\t\t\t\t\t" << KRED << "  .-***-." << "\t\t\t" << KRED << "  .-***-." << endl;
-        cout << "\t\t\t\t\t\t" << KRED << " /" << KWHT << "* * * *" << KRED << "9" << "\t\t\t" << KRED << " /" << KWHT << "* * * *" << KRED << "9" << endl;
-        cout << "\t\t\t\t\t\t" << KRED << ":_.-:`:-._;" << KWHT << "\t\t\t" << KRED << ":_.-:`:-._;" << KWHT << endl;
-        cout << "\t\t\t\t\t\t" << "    (_)" << "\t\t\t\t" << "    (_)" << endl;
-        cout << "\t\t\t\t\t\t" << KGRN << " !|/" << KWHT << "(_)" << KGRN << "!|/" << " !|/ !|/ !|/ !|/ !|/ !|" << KGRN << "!|/" << KWHT << "(_)" << KGRN << "!|/" ;
-        cout << endl << endl << KMAG << "\t\t\t\t\t\t\t ------------------";
-        cout << endl << "\t\t\t\t\t\t\t | D e f e a t :( |" << endl;
-        cout << "\t\t\t\t\t\t\t ------------------" << KWHT << endl << endl;
-    }
-    else if(flag == 1){
-        cout << endl;
-        cout << "\t\t\t" << KCYN << "*" << KRED << "                             |>>>" << KCYN << "                    +" << endl;
-        cout << "\t\t\t" << KCYN << "+          *" << KYEL << "                      |" << KCYN << "                   *       +" << endl;
-        cout << "\t\t\t" << KRED << "                    |>>>" << KYEL << "      _  _|_  _ " << KCYN << "  *" << KRED << "     |>>>" << endl;
-        cout << "\t\t\t" << KCYN << "           *" << KYEL << "        |        |;| |;| |;|        |                 " << KCYN << "*" << endl;
-        cout << "\t\t\t" << KCYN << "     + " << KYEL << "         _  _|_  _    77.    .  /    _  _|_  _       " << KCYN << "+" << endl;
-        cout << "\t\t\t" << KCYN << " *" << KYEL << "             |;|_|;|_|;|    77: +   /    |;|_|;|_|;|" << endl;
-        cout << "\t\t\t" << KYEL << "               77..      /    ||:+++. |    77.    .  /           " << KCYN << "*" << endl;
-        cout << "\t\t\t" << KCYN << "      +" << KYEL << "         \\.  ,  /     ||:+++  |     77:  .  /" << endl;
-        cout << "\t\t\t" << "                 ||:+  |_   _ ||_ . _ | _   _||:+  |       " << KCYN << "*" << endl;
-        cout << "\t\t\t" << "          *" << KYEL << "      ||+++.|||_|;|_|;|_|;|_|;|_|;||+++ |          " << KCYN << "+" << endl;
-        cout << "\t\t\t" << KYEL << "                 ||+++ ||.    .     .      . ||+++.|   " << KCYN << "*" << endl;
-        cout << "\t\t\t" << "+   *" << KYEL << "            ||: . ||:.     . .   .  ,   ||:   |               " << KCYN << "*" << endl;
-        cout << "\t\t\t" << "         *" << KYEL << "       ||:   ||:  ,     +       .  ||: , |" << KCYN << "      +" << endl;
-        cout << "\t\t\t" << "  *" << KYEL << "              ||:   ||:.     +++++      . ||:   |" << KCYN << "          *" << endl;
-        cout << "\t\t\t" << "     +           " << KYEL << "||:   ||.     +++++++  .    ||: . |" << KCYN << "    +" << endl;
-        cout << "\t\t\t" << KCYN << "           +" << KYEL << "     ||: . ||: ,   +++++++ .  .  ||:   |             " << KCYN << "+" << endl;
-        cout << "\t\t\t" << KYEL << "                 ||: . ||: ,   +++++++ .  .  ||:   |        " << KCYN << "*" << endl;
-        cout << "\t\t\t" << KYEL <<  "                 ||: . ||: ,   +++++++ .  .  ||:   |" << endl;
-        cout << endl << endl << KCYN << "\t\t\t\t\t\t -----------------";
-        cout << endl << "\t\t\t\t\t\t | V I C T O R Y |" << endl;
-        cout << "\t\t\t\t\t\t -----------------" << KWHT << endl << endl;
-    }
-}
-//_________________________________________________________________________________________________________________________________________________________________//
