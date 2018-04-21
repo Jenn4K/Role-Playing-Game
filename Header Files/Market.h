@@ -17,7 +17,7 @@ class Market {
 
         std:: list <Spell*> SpellsOnSell;       //Lists of Items and Spell on Sell by Heroes
         std:: list <Item*> ItemsOnSell;
-        MyTeam *Squad;                          //pointing directly to "MyTeam" class
+        MyTeam *Squad;                          //pointing directly to "MyTeam" 
 
     public:
         explicit Market(MyTeam*);                                           //constructor
